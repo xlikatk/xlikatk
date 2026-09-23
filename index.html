@@ -1,27 +1,172 @@
-<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>KLIX ATK — Katalog Produk</title>
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KLIX ATK — Pusat ATK, Packing & Kebutuhan Kantor</title>
 <style>
-:root{--b:#0759d8;--n:#071f55;--y:#ffc900;--bg:#f4f7fb;--l:#e3e8ef}*{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:var(--bg);color:#17233d}header{background:#fff;position:sticky;top:0;z-index:9;border-bottom:1px solid var(--l)}
-.nav{max-width:1180px;margin:auto;min-height:76px;padding:10px 18px;display:flex;align-items:center;gap:22px}.logo{font-size:28px;font-weight:950;color:var(--n);white-space:nowrap}.logo span{color:var(--b)}.tag{font-size:10px;color:#718096;letter-spacing:1px}
-.links{display:flex;gap:20px;margin-left:auto}.links a{text-decoration:none;color:var(--n);font-weight:800;font-size:14px}.search{width:240px;padding:11px;border:1px solid #d8e0ea;border-radius:11px}.cart{background:var(--n);color:white;border:0;border-radius:11px;padding:11px 14px;font-weight:800}
-main{max-width:1180px;margin:auto;padding:20px 18px 70px}.hero{background:linear-gradient(120deg,#eaf2ff,#fff);border:1px solid #dce8fb;border-radius:22px;padding:25px 28px;display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.hero small{background:var(--y);padding:6px 10px;border-radius:20px;font-weight:900}.hero h1{font-size:29px;margin:12px 0 6px;color:var(--n)}.hero p{margin:0;color:#65748a}.heroIcon{font-size:60px}
-.filters{display:flex;gap:8px;overflow:auto;margin-bottom:18px}.filter{background:#fff;border:1px solid #dce2ea;border-radius:999px;padding:10px 16px;font-weight:800;white-space:nowrap}.filter.active{background:var(--b);color:#fff;border-color:var(--b)}
-.title{display:flex;justify-content:space-between;margin:10px 0 13px}.title h2{margin:0;color:var(--n)}#count{font-size:12px;color:#748197}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
-.card{background:#fff;border:1px solid var(--l);border-radius:16px;padding:11px;box-shadow:0 3px 12px #0a25500b}.card:hover{transform:translateY(-2px)}.photo{height:220px;border-radius:12px;overflow:hidden;background:#f0f3f6}.photo img{width:100%;height:100%;object-fit:cover}
-.brand{font-size:11px;color:#748197;margin-top:10px;font-weight:700}h3{font-size:15px;line-height:1.3;margin:5px 0 10px;min-height:39px}.bottom{display:flex;align-items:center;justify-content:space-between;gap:8px}.price{font-size:12px;color:#69778d;font-weight:700}.bottom button{border:0;background:var(--b);color:#fff;border-radius:9px;padding:9px 11px;font-weight:800}
-#toast{position:fixed;right:18px;bottom:18px;background:var(--n);color:#fff;padding:13px 17px;border-radius:12px;display:none}
-@media(max-width:950px){.grid{grid-template-columns:repeat(3,1fr)}.links{display:none}}@media(max-width:650px){.logo{font-size:23px}.search{display:none}.hero{padding:18px}.hero h1{font-size:23px}.grid{grid-template-columns:repeat(2,1fr);gap:10px}.photo{height:165px}}
-</style></head><body>
-<header><div class="nav"><div class="logo">K<span>LIX</span> ATK<div class="tag">Klik. Pesan. Beres.</div></div>
-<div class="links"><a href="#">Beranda</a><a href="#produk">Produk</a><a href="#kategori">Kategori</a><a href="#">Kontak</a></div>
-<input id="search" class="search" placeholder="🔎 Cari produk..." oninput="render()"><button class="cart">🛒 Keranjang <b id="cc">0</b></button></div></header>
-<main><section class="hero"><div><small>KLIX ATK</small><h1>Pusat ATK, Packing & Kebutuhan Kantor</h1><p>Katalog produk dulu. Harga kita isi belakangan.</p></div><div class="heroIcon">📦</div></section>
-<div class="filters" id="kategori"><button class="filter active" onclick="setCat('Semua',this)">Semua</button><button class="filter" onclick="setCat('Packing',this)">Packing</button><button class="filter" onclick="setCat('ATK',this)">ATK</button></div>
-<div class="title" id="produk"><h2>Produk</h2><span id="count"></span></div><div class="grid"><article class="card" data-name="cutter joyko l-500" data-cat="ATK"><div class="photo"><img src="assets/cutter_joyko.png" alt="Cutter Joyko L-500" loading="lazy"></div><div class="brand">Joyko</div><h3>Cutter Joyko L-500</h3><div class="bottom"><span class="price">Harga segera</span><button onclick="add('Cutter Joyko L-500')">+ Pilih</button></div></article><article class="card" data-name="gunting joyko sc-848" data-cat="ATK"><div class="photo"><img src="assets/gunting_joykosc848.png" alt="Gunting Joyko SC-848" loading="lazy"></div><div class="brand">Joyko</div><h3>Gunting Joyko SC-848</h3><div class="bottom"><span class="price">Harga segera</span><button onclick="add('Gunting Joyko SC-848')">+ Pilih</button></div></article><article class="card" data-name="isi cutter kenko l-150" data-cat="ATK"><div class="photo"><img src="assets/isicutter_besar_kenko.png" alt="Isi Cutter Kenko L-150" loading="lazy"></div><div class="brand">Kenko</div><h3>Isi Cutter Kenko L-150</h3><div class="bottom"><span class="price">Harga segera</span><button onclick="add('Isi Cutter Kenko L-150')">+ Pilih</button></div></article><article class="card" data-name="isi cutter joyko a-100" data-cat="ATK"><div class="photo"><img src="assets/isicutter_kecil_joyko.png" alt="Isi Cutter Joyko A-100" loading="lazy"></div><div class="brand">Joyko</div><h3>Isi Cutter Joyko A-100</h3><div class="bottom"><span class="price">Harga segera</span><button onclick="add('Isi Cutter Joyko A-100')">+ Pilih</button></div></article><article class="card" data-name="cutter joyko a-300a" data-cat="ATK"><div class="photo"><img src="assets/joyko_cutter_kecil.png" alt="Cutter Joyko A-300A" loading="lazy"></div><div class="brand">Joyko</div><h3>Cutter Joyko A-300A</h3><div class="bottom"><span class="price">Harga segera</span><button onclick="add('Cutter Joyko A-300A')">+ Pilih</button></div></article><article class="card" data-name="lakban bening" data-cat="Packing"><div class="photo"><img src="assets/lakban_bening.png" alt="Lakban Bening" loading="lazy"></div><div class="brand">KLIX ATK</div><h3>Lakban Bening</h3><div class="bottom"><span class="price">Harga segera</span><button onclick="add('Lakban Bening')">+ Pilih</button></div></article><article class="card" data-name="lakban coklat" data-cat="Packing"><div class="photo"><img src="assets/lakban_cokelat.png" alt="Lakban Coklat" loading="lazy"></div><div class="brand">Solatape</div><h3>Lakban Coklat</h3><div class="bottom"><span class="price">Harga segera</span><button onclick="add('Lakban Coklat')">+ Pilih</button></div></article><article class="card" data-name="lakban fragile" data-cat="Packing"><div class="photo"><img src="assets/lakban_fragile.png" alt="Lakban Fragile" loading="lazy"></div><div class="brand">A-Basics</div><h3>Lakban Fragile</h3><div class="bottom"><span class="price">Harga segera</span><button onclick="add('Lakban Fragile')">+ Pilih</button></div></article><article class="card" data-name="plastik stretch wrap" data-cat="Packing"><div class="photo"><img src="assets/plastik_wrapping.png" alt="Plastik Stretch Wrap" loading="lazy"></div><div class="brand">Tip Top</div><h3>Plastik Stretch Wrap</h3><div class="bottom"><span class="price">Harga segera</span><button onclick="add('Plastik Stretch Wrap')">+ Pilih</button></div></article><article class="card" data-name="pulpen snowman v-5" data-cat="ATK"><div class="photo"><img src="assets/pulpen_snowmanv5.png" alt="Pulpen Snowman V-5" loading="lazy"></div><div class="brand">Snowman</div><h3>Pulpen Snowman V-5</h3><div class="bottom"><span class="price">Harga segera</span><button onclick="add('Pulpen Snowman V-5')">+ Pilih</button></div></article><article class="card" data-name="snowman permanent marker" data-cat="ATK"><div class="photo"><img src="assets/spidol_snowman.png" alt="Snowman Permanent Marker" loading="lazy"></div><div class="brand">Snowman</div><h3>Snowman Permanent Marker</h3><div class="bottom"><span class="price">Harga segera</span><button onclick="add('Snowman Permanent Marker')">+ Pilih</button></div></article></div></main><div id="toast"></div>
+:root{
+  --blue:#0759d8;--navy:#071f55;--yellow:#ffc900;--bg:#f4f7fb;
+  --line:#dfe7f1;--muted:#6d7b91;--white:#fff
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:#17233d}
+header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line)}
+.nav{max-width:1180px;margin:auto;min-height:78px;padding:9px 18px;display:flex;align-items:center;gap:18px}
+.brand-logo{height:54px;width:auto;display:block}
+.links{display:flex;gap:20px;margin-left:auto}
+.links a{text-decoration:none;color:var(--navy);font-weight:800;font-size:14px}
+.search{width:230px;padding:11px 13px;border:1px solid #d8e0ea;border-radius:12px}
+.cart{background:var(--navy);color:#fff;border:0;border-radius:12px;padding:12px 15px;font-weight:800}
+main{max-width:1180px;margin:auto;padding:20px 18px 70px}
+.hero{background:linear-gradient(120deg,#eaf2ff,#fff);border:1px solid #dce8fb;border-radius:24px;padding:25px 28px;display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:18px;overflow:hidden}
+.hero-copy{max-width:700px}
+.hero-badge{display:inline-block;background:var(--yellow);padding:7px 12px;border-radius:999px;font-weight:900;color:var(--navy)}
+.hero h1{font-size:32px;line-height:1.15;margin:12px 0 7px;color:var(--navy)}
+.hero p{margin:0;color:var(--muted);font-size:17px}
+.hero-logo{width:160px;max-width:35%;height:auto}
+.highlights{display:flex;gap:22px;margin-top:20px;flex-wrap:wrap}
+.highlight{display:flex;align-items:center;gap:9px;font-weight:800;color:var(--navy);font-size:13px}
+.icon{width:38px;height:38px;border-radius:50%;background:#dcebff;display:grid;place-items:center}
+.filters{display:flex;gap:8px;overflow:auto;margin:22px 0 18px}
+.filter{background:#fff;border:1px solid #dce2ea;border-radius:999px;padding:11px 18px;font-weight:800;white-space:nowrap}
+.filter.active{background:var(--blue);color:#fff;border-color:var(--blue)}
+.title{display:flex;justify-content:space-between;align-items:center;margin:10px 0 13px}
+.title h2{margin:0;color:var(--navy);font-size:28px}
+#count{font-size:14px;color:#748197}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:11px;box-shadow:0 4px 14px #0a25500b;transition:.15s}
+.card:hover{transform:translateY(-2px)}
+.photo{height:220px;border-radius:13px;overflow:hidden;background:#f0f3f6}
+.photo img{width:100%;height:100%;object-fit:cover}
+.brand{font-size:11px;color:#748197;margin-top:10px;font-weight:700}
+h3{font-size:15px;line-height:1.3;margin:5px 0 10px;min-height:39px}
+.bottom{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.price{font-size:12px;color:#69778d;font-weight:700}
+.bottom button{border:0;background:var(--blue);color:#fff;border-radius:10px;padding:9px 11px;font-weight:800}
+#toast{position:fixed;right:18px;bottom:18px;background:var(--navy);color:#fff;padding:13px 17px;border-radius:12px;display:none;z-index:30}
+@media(max-width:950px){
+  .grid{grid-template-columns:repeat(3,1fr)}
+  .links{display:none}
+}
+@media(max-width:650px){
+  .nav{min-height:72px;padding:8px 14px}
+  .brand-logo{height:48px}
+  .hero{padding:20px}
+  .hero h1{font-size:25px}
+  .hero p{font-size:15px}
+  .hero-logo{width:105px}
+  .highlights{gap:12px}
+  .grid{grid-template-columns:repeat(2,1fr);gap:10px}
+  .photo{height:165px}
+  .search{display:none}
+  .cart{padding:11px 12px}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="nav">
+    <img class="brand-logo" src="assets/klix-atk-logo.png" alt="KLIX ATK">
+    <div class="links">
+      <a href="#">Beranda</a><a href="#produk">Produk</a><a href="#kategori">Kategori</a><a href="#">Kontak</a>
+    </div>
+    <input id="search" class="search" placeholder="🔎 Cari produk..." oninput="render()">
+    <button class="cart">🛒 Keranjang <b id="cc">0</b></button>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-copy">
+      <span class="hero-badge">KLIX ATK</span>
+      <h1>Pusat ATK, Packing &amp; Kebutuhan Kantor</h1>
+      <p>Klik. Pesan. Beres. Katalog produk dulu, harga bisa kita isi belakangan.</p>
+      <div class="highlights">
+        <div class="highlight"><span class="icon">🚚</span>Pengiriman</div>
+        <div class="highlight"><span class="icon">🛡️</span>Produk berkualitas</div>
+        <div class="highlight"><span class="icon">💬</span>Customer support</div>
+      </div>
+    </div>
+    <img class="hero-logo" src="assets/klix-atk-logo.png" alt="Logo KLIX ATK">
+  </section>
+
+  <div class="filters" id="kategori">
+    <button class="filter active" onclick="setCat('Semua',this)">Semua</button>
+    <button class="filter" onclick="setCat('Packing',this)">Packing</button>
+    <button class="filter" onclick="setCat('ATK',this)">ATK</button>
+  </div>
+
+  <div class="title" id="produk"><h2>Produk</h2><span id="count"></span></div>
+  <div class="grid">
+
+    <article class="card" data-name="lakban bening" data-cat="Packing">
+      <div class="photo"><img src="assets/lakban_bening.png" alt="Lakban Bening" loading="lazy"></div>
+      <div class="brand">KLIX ATK</div><h3>Lakban Bening</h3>
+      <div class="bottom"><span class="price">Harga segera</span><button onclick="add('Lakban Bening')">+ Pilih</button></div>
+    </article>
+
+    <article class="card" data-name="lakban coklat" data-cat="Packing">
+      <div class="photo"><img src="assets/lakban_cokelat.png" alt="Lakban Coklat" loading="lazy"></div>
+      <div class="brand">Solatape</div><h3>Lakban Coklat</h3>
+      <div class="bottom"><span class="price">Harga segera</span><button onclick="add('Lakban Coklat')">+ Pilih</button></div>
+    </article>
+
+    <article class="card" data-name="lakban fragile" data-cat="Packing">
+      <div class="photo"><img src="assets/lakban_fragile.png" alt="Lakban Fragile" loading="lazy"></div>
+      <div class="brand">A-Basics</div><h3>Lakban Fragile</h3>
+      <div class="bottom"><span class="price">Harga segera</span><button onclick="add('Lakban Fragile')">+ Pilih</button></div>
+    </article>
+
+    <article class="card" data-name="plastik stretch wrap" data-cat="Packing">
+      <div class="photo"><img src="assets/plastik_wrapping.png" alt="Plastik Stretch Wrap" loading="lazy"></div>
+      <div class="brand">Tip Top</div><h3>Plastik Stretch Wrap</h3>
+      <div class="bottom"><span class="price">Harga segera</span><button onclick="add('Plastik Stretch Wrap')">+ Pilih</button></div>
+    </article>
+
+    <article class="card" data-name="pulpen snowman v-5" data-cat="ATK">
+      <div class="photo"><img src="assets/pulpen_snowmanv5.png" alt="Pulpen Snowman V-5" loading="lazy"></div>
+      <div class="brand">Snowman</div><h3>Pulpen Snowman V-5</h3>
+      <div class="bottom"><span class="price">Harga segera</span><button onclick="add('Pulpen Snowman V-5')">+ Pilih</button></div>
+    </article>
+
+    <article class="card" data-name="snowman permanent marker" data-cat="ATK">
+      <div class="photo"><img src="assets/spidol_snowman.png" alt="Snowman Permanent Marker" loading="lazy"></div>
+      <div class="brand">Snowman</div><h3>Snowman Permanent Marker</h3>
+      <div class="bottom"><span class="price">Harga segera</span><button onclick="add('Snowman Permanent Marker')">+ Pilih</button></div>
+    </article>
+
+  </div>
+</main>
+
+<div id="toast"></div>
 <script>
 let cat='Semua',cart=0;
-function setCat(c,b){cat=c;document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');render()}
-function render(){let q=document.getElementById('search').value.toLowerCase(),n=0;document.querySelectorAll('.card').forEach(c=>{let ok=(cat==='Semua'||c.dataset.cat===cat)&&c.dataset.name.includes(q);c.style.display=ok?'block':'none';if(ok)n++});document.getElementById('count').textContent=n+' produk'}
-function add(n){cart++;document.getElementById('cc').textContent=cart;let t=document.getElementById('toast');t.textContent=n+' dipilih ✓';t.style.display='block';setTimeout(()=>t.style.display='none',1400)}render();
-</script></body></html>
+function setCat(c,b){
+  cat=c;
+  document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));
+  b.classList.add('active');
+  render();
+}
+function render(){
+  const q=document.getElementById('search').value.toLowerCase();
+  let n=0;
+  document.querySelectorAll('.card').forEach(c=>{
+    const ok=(cat==='Semua'||c.dataset.cat===cat)&&c.dataset.name.includes(q);
+    c.style.display=ok?'block':'none';
+    if(ok)n++;
+  });
+  document.getElementById('count').textContent=n+' produk';
+}
+function add(n){
+  cart++;
+  document.getElementById('cc').textContent=cart;
+  const t=document.getElementById('toast');
+  t.textContent=n+' dipilih ✓';
+  t.style.display='block';
+  setTimeout(()=>t.style.display='none',1400);
+}
+render();
+</script>
+</body>
+</html>
