@@ -1,46 +1,103 @@
 <!doctype html>
 <html lang="id">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>KLIX ATK — Pusat ATK, Packing & Kebutuhan Kantor</title>
 <style>
 :root{--blue:#0962dc;--navy:#08255b;--yellow:#ffc800;--bg:#f5f8fc;--line:#dce5f0;--muted:#687892}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--navy);font-family:Arial,Helvetica,sans-serif}
-header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}.nav{max-width:1240px;margin:auto;height:78px;padding:10px 20px;display:flex;align-items:center;gap:24px}.logo{height:58px;width:auto}
-.menu{display:flex;gap:26px;margin-left:auto}.menu a{color:var(--navy);font-weight:800;text-decoration:none;font-size:14px}.search{width:285px;border:1px solid #d6e0ec;border-radius:14px;padding:12px 15px;outline:none}.cart{border:0;background:var(--navy);color:#fff;border-radius:13px;padding:13px 18px;font-weight:800}
-main{max-width:1240px;margin:auto;padding:18px 20px 0}.hero{height:190px;border:1px solid #d8e6fb;border-radius:22px;background:linear-gradient(100deg,#edf5ff,#fff);display:flex;align-items:center;justify-content:space-between;overflow:hidden;padding-left:48px;margin-bottom:18px}.hero h1{font-size:34px;margin:10px 0 8px;line-height:1.08}.hero p{margin:0;color:var(--muted);font-size:17px}.badge{display:inline-block;background:var(--yellow);border-radius:999px;padding:9px 16px;font-weight:900}.hero-art{height:100%;width:38%;object-fit:cover;object-position:center}
-.filters{display:flex;gap:10px;margin:12px 0 16px}.filter{border:1px solid #d8e1ed;background:#fff;color:var(--navy);border-radius:999px;padding:11px 20px;font-weight:800}.filter.active{background:var(--blue);border-color:var(--blue);color:#fff}
+header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+.nav{max-width:1240px;margin:auto;height:78px;padding:10px 20px;display:flex;align-items:center;gap:24px}
+.logo{height:58px;width:auto}.menu{display:flex;gap:26px;margin-left:auto}
+.menu a{color:var(--navy);font-weight:800;text-decoration:none;font-size:14px}
+.search{width:285px;border:1px solid #d6e0ec;border-radius:14px;padding:12px 15px;outline:none}
+.cart{border:0;background:var(--navy);color:#fff;border-radius:13px;padding:13px 18px;font-weight:800}
+main{max-width:1240px;margin:auto;padding:18px 20px}
+.hero{min-height:190px;border:1px solid #d8e6fb;border-radius:22px;background:linear-gradient(100deg,#edf5ff,#fff);display:flex;align-items:center;justify-content:space-between;overflow:hidden;padding:30px 48px;margin-bottom:18px}
+.hero h1{font-size:34px;margin:10px 0 8px;line-height:1.08}.hero p{margin:0;color:var(--muted);font-size:17px}
+.badge{display:inline-block;background:var(--yellow);border-radius:999px;padding:9px 16px;font-weight:900}
+.hero-art{height:150px;width:180px;object-fit:contain}
+.filters{display:flex;gap:10px;margin:12px 0 16px}.filter{border:1px solid #d8e1ed;background:#fff;color:var(--navy);border-radius:999px;padding:11px 20px;font-weight:800}
+.filter.active{background:var(--blue);border-color:var(--blue);color:#fff}
 .heading{display:flex;align-items:center;justify-content:space-between}.heading h2{font-size:28px;margin:0 0 12px}.count{color:#718099;font-size:14px}
-.grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px}.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:10px;box-shadow:0 4px 14px rgba(15,45,90,.06)}.pic{height:175px;background:#f4f6f9;border-radius:12px;overflow:hidden;display:grid;place-items:center}.pic img{width:100%;height:100%;object-fit:cover}.placeholder{font-size:54px}.brand{color:#718099;font-size:11px;margin-top:9px}.card h3{font-size:14px;line-height:1.25;margin:4px 0 12px;min-height:35px}.row{display:flex;align-items:center;justify-content:space-between;gap:7px}.price{font-size:11px;color:#69788f;font-weight:700}.pick{border:0;background:var(--blue);color:#fff;border-radius:9px;padding:9px 10px;font-weight:800;font-size:12px}
-footer{margin-top:24px;background:#fff;border-top:1px solid var(--line);padding:20px}.foot{max-width:1240px;margin:auto;display:flex;justify-content:space-between;color:#64738b;font-size:12px}#toast{position:fixed;right:18px;bottom:18px;background:var(--navy);color:#fff;padding:12px 16px;border-radius:12px;display:none}
-@media(max-width:1050px){.grid{grid-template-columns:repeat(4,1fr)}.menu{display:none}}@media(max-width:700px){.nav{height:70px;padding:8px 12px}.logo{height:48px}.search{display:none}.cart{margin-left:auto;padding:11px 12px}main{padding:14px 12px}.hero{height:auto;min-height:175px;padding:22px;gap:10px}.hero h1{font-size:24px}.hero p{font-size:14px}.hero-art{width:33%;height:150px}.grid{grid-template-columns:repeat(2,1fr);gap:10px}.pic{height:155px}.heading h2{font-size:25px}.foot{flex-direction:column;gap:8px}}
-</style></head>
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:10px;box-shadow:0 4px 14px rgba(15,45,90,.06)}
+.pic{height:220px;background:#f4f6f9;border-radius:12px;overflow:hidden;display:grid;place-items:center}.pic img{width:100%;height:100%;object-fit:cover}
+.brand{color:#718099;font-size:11px;margin-top:9px}.card h3{font-size:15px;line-height:1.25;margin:4px 0 12px;min-height:38px}
+.row{display:flex;align-items:center;justify-content:space-between;gap:7px}.price{font-size:11px;color:#69788f;font-weight:700}
+.pick{border:0;background:var(--blue);color:#fff;border-radius:9px;padding:9px 10px;font-weight:800;font-size:12px}
+footer{margin-top:24px;background:#fff;border-top:1px solid var(--line);padding:20px}
+.foot{max-width:1240px;margin:auto;display:flex;justify-content:space-between;color:#64738b;font-size:12px}
+#toast{position:fixed;right:18px;bottom:18px;background:var(--navy);color:#fff;padding:12px 16px;border-radius:12px;display:none}
+@media(max-width:1050px){.grid{grid-template-columns:repeat(3,1fr)}.menu{display:none}}
+@media(max-width:700px){.nav{height:70px;padding:8px 12px}.logo{height:48px}.search{display:none}.cart{margin-left:auto;padding:11px 12px}
+main{padding:14px 12px}.hero{padding:22px;gap:10px}.hero h1{font-size:24px}.hero p{font-size:14px}.hero-art{width:110px;height:110px}
+.grid{grid-template-columns:repeat(2,1fr);gap:10px}.pic{height:155px}.heading h2{font-size:25px}.foot{flex-direction:column;gap:8px}}
+</style>
+</head>
 <body>
-<header><div class="nav"><img class="logo" src="assets/klix-atk-logo.png" alt="KLIX ATK"><nav class="menu"><a href="#">Beranda</a><a href="#produk">Produk</a><a href="#kategori">Kategori</a><a href="#">Kontak</a></nav><input class="search" id="search" placeholder="🔎 Cari produk..." oninput="render()"><button class="cart">🛒 Keranjang <span id="cartCount">0</span></button></div></header>
+<header><div class="nav">
+<img class="logo" src="assets/klix-atk-logo.png" alt="KLIX ATK">
+<nav class="menu"><a href="#">Beranda</a><a href="#produk">Produk</a><a href="#kategori">Kategori</a><a href="#">Kontak</a></nav>
+<input class="search" id="search" placeholder="🔎 Cari produk..." oninput="render()">
+<button class="cart">🛒 Keranjang <span id="cartCount">0</span></button>
+</div></header>
+
 <main>
-<section class="hero"><div><span class="badge">KLIX ATK</span><h1>Pusat ATK, Packing &amp; Kebutuhan Kantor</h1><p>Klik. Pesan. Beres. Katalog produk dulu, harga bisa kita isi belakangan.</p></div><img class="hero-art" src="assets/klix-atk-logo.png" alt="KLIX ATK"></section>
-<div class="filters" id="kategori"><button class="filter active" onclick="setCat('Semua',this)">Semua</button><button class="filter" onclick="setCat('Packing',this)">Packing</button><button class="filter" onclick="setCat('ATK',this)">ATK</button></div>
+<section class="hero">
+<div><span class="badge">KLIX ATK</span>
+<h1>Pusat ATK, Packing &amp; Kebutuhan Kantor</h1>
+<p>Klik. Pesan. Beres. Katalog produk dulu, harga bisa kita isi belakangan.</p></div>
+<img class="hero-art" src="assets/klix-atk-logo.png" alt="KLIX ATK">
+</section>
+
+<div class="filters" id="kategori">
+<button class="filter active" onclick="setCat('Semua',this)">Semua</button>
+<button class="filter" onclick="setCat('Packing',this)">Packing</button>
+<button class="filter" onclick="setCat('ATK',this)">ATK</button>
+</div>
+
 <div class="heading" id="produk"><h2>Produk</h2><span class="count" id="count"></span></div>
 <section class="grid">
-<article class="card" data-cat="Packing" data-name="lakban bening"><div class="pic"><img src="assets/lakban_bening.png" alt="Lakban Bening"></div><div class="brand">KLIX ATK</div><h3>Lakban Bening</h3><div class="row"><span class="price">Harga segera</span><button class="pick" onclick="add('Lakban Bening')">+ Pilih</button></div></article>
-<article class="card" data-cat="Packing" data-name="lakban coklat"><div class="pic"><img src="assets/lakban_cokelat.png" alt="Lakban Coklat"></div><div class="brand">Solatape</div><h3>Lakban Coklat</h3><div class="row"><span class="price">Harga segera</span><button class="pick" onclick="add('Lakban Coklat')">+ Pilih</button></div></article>
-<article class="card" data-cat="Packing" data-name="lakban fragile"><div class="pic"><img src="assets/lakban_fragile.png" alt="Lakban Fragile"></div><div class="brand">A-Basics</div><h3>Lakban Fragile</h3><div class="row"><span class="price">Harga segera</span><button class="pick" onclick="add('Lakban Fragile')">+ Pilih</button></div></article>
-<article class="card" data-cat="Packing" data-name="plastik stretch wrap"><div class="pic"><img src="assets/plastik_wrapping.png" alt="Plastik Stretch Wrap"></div><div class="brand">Tip Top</div><h3>Plastik Stretch Wrap</h3><div class="row"><span class="price">Harga segera</span><button class="pick" onclick="add('Plastik Stretch Wrap')">+ Pilih</button></div></article>
-<article class="card" data-cat="ATK" data-name="pulpen snowman v5"><div class="pic"><img src="assets/pulpen_snowmanv5.png" alt="Pulpen Snowman V-5"></div><div class="brand">Snowman</div><h3>Pulpen Snowman V-5</h3><div class="row"><span class="price">Harga segera</span><button class="pick" onclick="add('Pulpen Snowman V-5')">+ Pilih</button></div></article>
-<article class="card" data-cat="ATK" data-name="spidol snowman"><div class="pic"><img src="assets/spidol_snowman.png" alt="Spidol Snowman"></div><div class="brand">Snowman</div><h3>Spidol Snowman</h3><div class="row"><span class="price">Harga segera</span><button class="pick" onclick="add('Spidol Snowman')">+ Pilih</button></div></article>
-<article class="card" data-cat="ATK" data-name="buku tulis"><div class="pic placeholder">📒</div><div class="brand">ATK</div><h3>Buku Tulis</h3><div class="row"><span class="price">Harga segera</span><button class="pick" onclick="add('Buku Tulis')">+ Pilih</button></div></article>
-<article class="card" data-cat="ATK" data-name="pensil"><div class="pic placeholder">✏️</div><div class="brand">ATK</div><h3>Pensil</h3><div class="row"><span class="price">Harga segera</span><button class="pick" onclick="add('Pensil')">+ Pilih</button></div></article>
-<article class="card" data-cat="ATK" data-name="penghapus"><div class="pic placeholder">◻️</div><div class="brand">ATK</div><h3>Penghapus</h3><div class="row"><span class="price">Harga segera</span><button class="pick" onclick="add('Penghapus')">+ Pilih</button></div></article>
-<article class="card" data-cat="ATK" data-name="penggaris 30 cm"><div class="pic placeholder">📏</div><div class="brand">ATK</div><h3>Penggaris 30 cm</h3><div class="row"><span class="price">Harga segera</span><button class="pick" onclick="add('Penggaris 30 cm')">+ Pilih</button></div></article>
-<article class="card" data-cat="ATK" data-name="stapler mini"><div class="pic placeholder">📎</div><div class="brand">ATK</div><h3>Stapler Mini</h3><div class="row"><span class="price">Harga segera</span><button class="pick" onclick="add('Stapler Mini')">+ Pilih</button></div></article>
-</section></main>
-<footer><div class="foot"><span>© 2026 KLIX ATK. Semua hak dilindungi.</span><b>Pusat ATK, Packing &amp; Kebutuhan Kantor</b><span>Beranda &nbsp; Produk &nbsp; Kategori &nbsp; Kontak</span></div></footer>
+
+<article class="card" data-cat="Packing" data-name="lakban bening">
+<div class="pic"><img src="assets/lakban_bening.png" alt="Lakban Bening"></div><div class="brand">KLIX ATK</div><h3>Lakban Bening</h3>
+<div class="row"><span class="price">Harga segera</span><button class="pick" onclick="add('Lakban Bening')">+ Pilih</button></div></article>
+
+<article class="card" data-cat="Packing" data-name="lakban coklat">
+<div class="pic"><img src="assets/lakban_cokelat.png" alt="Lakban Coklat"></div><div class="brand">Solatape</div><h3>Lakban Coklat</h3>
+<div class="row"><span class="price">Harga segera</span><button class="pick" onclick="add('Lakban Coklat')">+ Pilih</button></div></article>
+
+<article class="card" data-cat="Packing" data-name="lakban fragile">
+<div class="pic"><img src="assets/lakban_fragile.png" alt="Lakban Fragile"></div><div class="brand">A-Basics</div><h3>Lakban Fragile</h3>
+<div class="row"><span class="price">Harga segera</span><button class="pick" onclick="add('Lakban Fragile')">+ Pilih</button></div></article>
+
+<article class="card" data-cat="Packing" data-name="plastik stretch wrap">
+<div class="pic"><img src="assets/plastik_wrapping.png" alt="Plastik Stretch Wrap"></div><div class="brand">Tip Top</div><h3>Plastik Stretch Wrap</h3>
+<div class="row"><span class="price">Harga segera</span><button class="pick" onclick="add('Plastik Stretch Wrap')">+ Pilih</button></div></article>
+
+<article class="card" data-cat="ATK" data-name="pulpen snowman v5">
+<div class="pic"><img src="assets/pulpen_snowmanv5.png" alt="Pulpen Snowman V-5"></div><div class="brand">Snowman</div><h3>Pulpen Snowman V-5</h3>
+<div class="row"><span class="price">Harga segera</span><button class="pick" onclick="add('Pulpen Snowman V-5')">+ Pilih</button></div></article>
+
+<article class="card" data-cat="ATK" data-name="spidol snowman">
+<div class="pic"><img src="assets/spidol_snowman.png" alt="Spidol Snowman Permanent Marker"></div><div class="brand">Snowman</div><h3>Snowman Permanent Marker</h3>
+<div class="row"><span class="price">Harga segera</span><button class="pick" onclick="add('Snowman Permanent Marker')">+ Pilih</button></div></article>
+
+</section>
+</main>
+
+<footer><div class="foot"><span>© 2026 KLIX ATK. Semua hak dilindungi.</span><b>Pusat ATK, Packing &amp; Kebutuhan Kantor</b><span>Beranda · Produk · Kategori · Kontak</span></div></footer>
 <div id="toast"></div>
 <script>
 let category='Semua',cart=0;
 function setCat(c,b){category=c;document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');render()}
-function render(){const q=document.getElementById('search').value.toLowerCase();let n=0;document.querySelectorAll('.card').forEach(c=>{const ok=(category==='Semua'||c.dataset.cat===category)&&c.dataset.name.includes(q);c.style.display=ok?'block':'none';if(ok)n++});document.getElementById('count').textContent=n+' produk'}
+function render(){const q=document.getElementById('search').value.toLowerCase();let n=0;
+document.querySelectorAll('.card').forEach(c=>{const ok=(category==='Semua'||c.dataset.cat===category)&&c.dataset.name.includes(q);c.style.display=ok?'block':'none';if(ok)n++});
+document.getElementById('count').textContent=n+' produk'}
 function add(name){cart++;document.getElementById('cartCount').textContent=cart;const t=document.getElementById('toast');t.textContent=name+' dipilih ✓';t.style.display='block';setTimeout(()=>t.style.display='none',1200)}
 render();
 </script>
-</body></html>
+</body>
+</html>
